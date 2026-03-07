@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg1760" inkscape:version="0.92.0 r15299" x="0px" y="0px" viewBox="0 0 797.2 173" style="enable-background:new 0 0 797.2 173;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#00DCFA;}
+</style>
+
+<g id="layer1" transform="translate(309.17318,-194.34167)" inkscape:label="Layer 1" inkscape:groupmode="layer">
+	<g id="g1811" transform="translate(0.39688112,-0.39687465)">
+		<g id="g1774" transform="matrix(0.26458333,0,0,0.26458333,-309.17318,195.13542)">
+			<path id="path1762" inkscape:connector-curvature="0" d="M1039,356.4h123.2v81.6c-26.5,15.9-62.4,25.7-97.1,25.7     c-87.7,0-146.6-56.7-146.6-141.4c0-85.4,58.2-142.9,144.4-142.9c46.5,0,83.9,14,117.9,43.5l4.9,4.5l35.5-56.7l-3.8-3     c-45-37.8-96-56.3-155.3-56.3c-60.1,0-114.5,19.7-153.4,55.6c-41.6,38.2-63.5,91.8-63.5,155c0,123.2,89.2,209.4,216.9,209.4     c58.6,0,130.4-22.7,170.5-53.7l2.3-1.9V291.8h-195.4v64.6H1039z"></path>
+			<polygon id="polygon1764" points="1640.3,525.7 1640.3,460.7 1390.1,460.7 1390.1,347.4 1597.6,347.4 1597.6,282.3 1390.1,282.3      1390.1,182.2 1640.3,182.2 1640.3,117.2 1320.6,117.2 1320.6,525.7    "></polygon>
+			<polygon id="polygon1766" points="2102.2,117.2 1943.1,308.4 1784.3,117.2 1720.5,117.2 1720.5,525.7 1792.6,525.7 1792.6,235.1      1934.4,405.9 1951.4,405.9 2093.1,235.1 2093.1,525.7 2165.3,525.7 2165.3,117.2    "></polygon>
+			<rect id="rect1768" x="2271.5" y="117.2" width="72.2" height="408.6"></rect>
+			<polygon id="polygon1770" points="2513.4,119.1 2511.5,117.2 2449.5,117.2 2449.5,525.7 2521.7,525.7 2521.7,235.5 2764.4,523.9      2766.3,525.7 2827.9,525.7 2827.9,117.2 2755.7,117.2 2755.7,408.6    "></polygon>
+			<rect id="rect1772" x="2933.7" y="117.2" width="72.2" height="408.6"></rect>
+		</g>
+		<path id="path1776" inkscape:connector-curvature="0" class="st0" d="M-197,196.2c-29.9,0-55.3,23-58.5,52.6    c-29.6,3.2-52.6,28.6-52.6,58.5c0,32.5,26.4,58.9,58.9,58.9c29.9,0,55.4-23,58.5-52.6c29.6-3.2,52.6-28.6,52.6-58.5    C-138.1,222.6-164.5,196.2-197,196.2L-197,196.2z M-151.9,261.7c-2.9,19.7-18.7,35.5-38.4,38.4v-38.4H-151.9z M-294.3,300.7    c2.9-19.8,18.7-35.6,38.4-38.5v38.4h-38.4V300.7z M-204.1,314c-3.3,22.3-22.4,38.9-45.1,38.9s-41.8-16.6-45.1-38.9L-204.1,314z     M-203.6,261.7v38.9h-39v-38.9L-203.6,261.7z M-151.9,248.4h-90.2c3.3-22.3,22.4-38.9,45.1-38.9S-155.2,226.1-151.9,248.4z"></path>
+	</g>
+</g>
+</svg>
