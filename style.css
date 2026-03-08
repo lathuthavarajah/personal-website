@@ -175,12 +175,12 @@ body {
 .exp-top-text { flex: 1; min-width: 0; }
 
 .exp-logo {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 8px;
-  padding: 6px;
+  padding: 8px;
   background: rgba(255,255,255,.04);
   border: 1px solid var(--border);
 }

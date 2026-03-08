@@ -40,37 +40,35 @@ const FS = {
 const FILES = {
   'about.txt': () => [
     { text: '' },
-    { text: '  hey, i\'m lathu. 👋', cls: 'bold white' },
+    { text: '  hey, i\'m lathu.', cls: 'bold white' },
     { text: '' },
     { html: '  <img class="about-logo" src="img/waterloo.png" alt="University of Waterloo" /> <span style="color:var(--white)">cs student @ university of waterloo (sept 2024 – apr 2028)</span>' },
     { text: '  currently interning at gemini in nyc, building real-time', cls: 'muted' },
     { text: '  trading infrastructure — websockets, grpc microservices,', cls: 'muted' },
     { text: '  cdn migrations, the whole deal.', cls: 'muted' },
     { text: '' },
-    { text: '  i like building things that are fast, reliable, and don\'t', cls: 'muted' },
-    { text: '  page anyone at 3am. i\'ve gone from writing forex bots that', cls: 'muted' },
-    { text: '  secured real investment capital, to optimizing packet processing', cls: 'muted' },
-    { text: '  at a telecom giant, to shipping production services at one of', cls: 'muted' },
-    { text: '  crypto\'s most trusted exchanges.', cls: 'muted' },
+    { text: '  i focus on building fast, reliable systems. i\'ve gone from', cls: 'muted' },
+    { text: '  writing forex bots that secured real investment capital, to', cls: 'muted' },
+    { text: '  optimizing packet processing at a telecom company, to shipping', cls: 'muted' },
+    { text: '  production services at one of crypto\'s most trusted exchanges.', cls: 'muted' },
     { text: '' },
-    { text: '  when i\'m not coding, i\'m probably making games for kids,', cls: 'muted' },
-    { text: '  exploring new toolchains, or nerding out about market', cls: 'muted' },
-    { text: '  microstructure.', cls: 'muted' },
+    { text: '  outside of work — building games, exploring new toolchains,', cls: 'muted' },
+    { text: '  and studying market microstructure.', cls: 'muted' },
     { text: '' },
   ],
 
   'contact.txt': () => [
     { text: '' },
-    { html: '<div class="contact-item">📧  <a href="mailto:l2thavar@uwaterloo.ca">l2thavar@uwaterloo.ca</a></div>' },
-    { html: '<div class="contact-item">💼  <a href="https://linkedin.com/in/lathuthavarajah" target="_blank">linkedin.com/in/lathuthavarajah</a></div>' },
-    { html: '<div class="contact-item">🐙  <a href="https://github.com/lathuthavarajah" target="_blank">github.com/lathuthavarajah</a></div>' },
+    { html: '<div class="contact-item">email  <a href="mailto:l2thavar@uwaterloo.ca">l2thavar@uwaterloo.ca</a></div>' },
+    { html: '<div class="contact-item">linkedin  <a href="https://linkedin.com/in/lathuthavarajah" target="_blank">linkedin.com/in/lathuthavarajah</a></div>' },
+    { html: '<div class="contact-item">github  <a href="https://github.com/lathuthavarajah" target="_blank">github.com/lathuthavarajah</a></div>' },
     { text: '' },
   ],
 
   'resume.pdf': () => [
     { text: '' },
-    { text: '  📄 you can\'t cat a pdf, silly. but here:', cls: 'yellow' },
-    { text: '  → email me at l2thavar@uwaterloo.ca and i\'ll send it over.', cls: 'muted' },
+    { text: '  can\'t render a pdf in a terminal.', cls: 'yellow' },
+    { text: '  → reach out at l2thavar@uwaterloo.ca for a copy.', cls: 'muted' },
     { text: '' },
   ],
 
@@ -244,7 +242,7 @@ function helpText() {
     { text: '  history           show command history', cls: 'muted' },
     { text: '  date              current date', cls: 'muted' },
     { text: '  echo <text>       echo text', cls: 'muted' },
-    { text: '  sudo hire-lathu   🤫', cls: 'muted' },
+    { text: '  sudo hire-lathu   try it', cls: 'muted' },
     { text: '' },
     { text: '  tip: use ↑/↓ arrows to navigate command history', cls: 'yellow' },
     { text: '' },
@@ -339,8 +337,8 @@ function exec(raw) {
     case 'whoami': print([
       { text: '' },
       { text: '  lathu thavarajah', cls: 'bold green' },
-      { text: '  cs student. systems nerd. intern collector.', cls: 'muted' },
-      { text: '  currently making websockets go fast at gemini.', cls: 'muted' },
+      { text: '  cs @ university of waterloo · 3x engineering intern', cls: 'muted' },
+      { text: '  currently building real-time trading infra at gemini.', cls: 'muted' },
       { text: '' },
     ]); break;
 
@@ -368,42 +366,42 @@ function exec(raw) {
       if (args.join(' ').toLowerCase() === 'hire-lathu') {
         print([
           { text: '' },
-          { text: '  ✅ REQUEST APPROVED', cls: 'bold green' },
+          { text: '  REQUEST APPROVED', cls: 'bold green' },
           { text: '' },
-          { text: '  excellent decision. lathu has been hired.', cls: 'green' },
-          { text: '  your company\'s engineering just got a massive upgrade.', cls: 'muted' },
+          { text: '  lathu has been added to the team.', cls: 'green' },
+          { text: '  solid choice.', cls: 'muted' },
           { text: '' },
           { text: '  → send the offer to l2thavar@uwaterloo.ca', cls: 'cyan' },
           { text: '' },
         ]);
       } else {
-        print([{ text: `  nice try. sudo is for hiring me only.`, cls: 'red' }]);
+        print([{ text: `  sudo: only "hire-lathu" is authorized.`, cls: 'red' }]);
       }
       break;
 
     case 'vim': case 'nano': case 'code':
-      print([{ text: `  this is a read-only filesystem — but i appreciate the enthusiasm.`, cls: 'yellow' }]);
+      print([{ text: `  read-only filesystem.`, cls: 'yellow' }]);
       break;
 
     case 'rm':
-      print([{ text: `  hey! you can't delete my stuff 😤`, cls: 'red' }]);
+      print([{ text: `  permission denied: read-only filesystem`, cls: 'red' }]);
       break;
 
     case 'exit':
       print([
         { text: '' },
-        { text: '  thanks for stopping by! 👋', cls: 'green' },
+        { text: '  thanks for visiting.', cls: 'green' },
         { text: '  → l2thavar@uwaterloo.ca if you want to chat.', cls: 'cyan' },
         { text: '' },
       ]);
       break;
 
     case 'npm':
-      print([{ text: '  node_modules would take up the entire website. no thanks.', cls: 'yellow' }]);
+      print([{ text: '  npm: not available in this environment.', cls: 'yellow' }]);
       break;
 
     case 'neofetch':
-      print([{ text: '  did you mean: play', cls: 'yellow' }, { text: '  type "play" to see what games you can play!', cls: 'muted' }]);
+      print([{ text: '  did you mean: play', cls: 'yellow' }, { text: '  type "play" to see available games.', cls: 'muted' }]);
       break;
 
     case 'git':
@@ -415,7 +413,7 @@ function exec(raw) {
           { text: '  * 22d3eef  initial commit: lathu.exe', cls: 'muted' },
         ]);
       } else {
-        print([{ text: `  fatal: this is a website, not a repo (but i do love git)`, cls: 'red' }]);
+        print([{ text: `  fatal: not a git repository`, cls: 'red' }]);
       }
       break;
 
@@ -572,13 +570,13 @@ function cmdPlay(arg) {
   if (!arg) {
     print([
       { text: '' },
-      { html: '  <span style="color:var(--purple);font-weight:700;font-size:1rem">🎮 games i built</span>' },
+      { html: '  <span style="color:var(--purple);font-weight:700;font-size:1rem">games i built</span>' },
       { text: '  these shipped in production for brain racers view games.', cls: 'muted' },
       { text: '  maze game hit #1 trending at a regional esports event.', cls: 'muted' },
       { text: '' },
       { html: `<div class="game-picker">
         <div class="game-option" onclick="exec('play maze')">
-          <div class="game-option-icon">🧩</div>
+          <div class="game-option-icon" style="font-size:1.2rem;color:var(--accent);font-weight:700">[1]</div>
           <div class="game-option-info">
             <div class="game-option-name">maze memory</div>
             <div class="game-option-desc">memorize the path, then recreate it. grids get bigger. lives are limited.</div>
@@ -586,7 +584,7 @@ function cmdPlay(arg) {
           </div>
         </div>
         <div class="game-option" onclick="exec('play gap')">
-          <div class="game-option-icon">🏃</div>
+          <div class="game-option-icon" style="font-size:1.2rem;color:var(--accent);font-weight:700">[2]</div>
           <div class="game-option-info">
             <div class="game-option-name">thru the gap</div>
             <div class="game-option-desc">dodge falling walls. speed increases. gaps shrink. survive as long as you can.</div>
@@ -631,7 +629,7 @@ function launchMazeGame() {
   wrapper.className = 'game-container';
   wrapper.innerHTML = `
     <div class="maze-header">
-      <span class="maze-title">🧩 maze memory</span>
+      <span class="maze-title">maze memory</span>
       <span class="maze-lives" id="mazeLives"></span>
       <span class="maze-level" id="mazeLevel"></span>
       <button class="maze-quit" id="mazeQuit">esc to quit</button>
@@ -657,7 +655,7 @@ function launchMazeGame() {
   quitBtn.onclick = quit;
 
   function updateHUD() {
-    livesEl.textContent = '❤️'.repeat(lives);
+    livesEl.textContent = Array(lives).fill('●').join(' ');
     levelEl.textContent = `level ${level + 1}/10`;
   }
 
@@ -732,11 +730,11 @@ function launchMazeGame() {
       clickIdx++;
       if (clickIdx === path.length) {
         // level complete
-        status.textContent = 'nice! ✓';
+        status.textContent = 'correct.';
         status.style.color = 'var(--green)';
         level++;
         if (level >= LEVELS.length) {
-          status.textContent = '🎉 you beat all 10 levels! incredible.';
+          status.textContent = 'all 10 levels cleared.';
           setTimeout(quit, 2500);
           return;
         }
@@ -783,7 +781,7 @@ function launchGapGame() {
   wrapper.className = 'game-container';
   wrapper.innerHTML = `
     <div class="maze-header" style="max-width:760px">
-      <span class="maze-title">🏃 thru the gap</span>
+      <span class="maze-title">thru the gap</span>
       <span id="gapScore" style="color:var(--green)">score: 0</span>
       <span id="gapSpeed" style="color:var(--cyan)">speed: 1x</span>
       <span id="gapTimer" style="color:var(--muted)">0:00</span>
@@ -864,7 +862,7 @@ function launchGapGame() {
     if (elapsed >= MAX_TIME) {
       won = true;
       running = false;
-      drawEndScreen('🎉 you survived! incredible.', 'var(--green)');
+      drawEndScreen('survived. 120s cleared.', 'var(--green)');
       setTimeout(quit, 2500);
       return;
     }
@@ -899,9 +897,9 @@ function launchGapGame() {
           running = false;
           if (retries > 0) {
             retries--;
-            drawEndScreen(`💥 hit! score: ${score}. press enter to retry.`, 'var(--orange)');
+            drawEndScreen(`hit — score: ${score}. press enter to retry.`, 'var(--orange)');
           } else {
-            drawEndScreen(`💀 game over! final score: ${score}`, 'var(--red)');
+            drawEndScreen(`game over — final score: ${score}`, 'var(--red)');
             setTimeout(quit, 2500);
           }
           return;
@@ -1111,11 +1109,11 @@ function boot() {
     { delay: 1600, lines: [
       { html: '  <span style="color:var(--muted)">  ┌──</span> <span style="color:var(--purple);font-weight:700">quick start</span>' },
       { html: '  <span style="color:var(--muted)">  │</span>' },
-      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">experience</span>  <span style="color:var(--muted)">─── where i\'ve worked</span>' },
-      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">projects</span>    <span style="color:var(--muted)">─── stuff i\'ve built</span>' },
-      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">skills</span>      <span style="color:var(--muted)">─── my toolbox</span>' },
-      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">play</span>        <span style="color:var(--muted)">─── games i built (yes, playable)</span>' },
-      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">contact</span>     <span style="color:var(--muted)">─── get in touch</span>' },
+      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">experience</span>  <span style="color:var(--muted)">─── work history</span>' },
+      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">projects</span>    <span style="color:var(--muted)">─── things i\'ve built</span>' },
+      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">skills</span>      <span style="color:var(--muted)">─── languages, frameworks, infra</span>' },
+      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">play</span>        <span style="color:var(--muted)">─── interactive games i shipped</span>' },
+      { html: '  <span style="color:var(--muted)">  ├─</span> <span style="color:var(--yellow)">contact</span>     <span style="color:var(--muted)">─── reach out</span>' },
       { html: '  <span style="color:var(--muted)">  └─</span> <span style="color:var(--yellow)">help</span>        <span style="color:var(--muted)">─── all commands</span>' },
     ]},
     { delay: 1800, lines: [{ text: '' }] },
