@@ -192,7 +192,7 @@ const SKILL_DATA = {
   'languages': [['Python',90],['Go',82],['C/C++',80],['TypeScript',85],['JavaScript',80],['Rust',60],['Java',70],['SQL',78],['Racket',50]],
   'frameworks': [['React',85],['Node.js',80],['Flask',90],['Django',75],['gRPC',78],['Kafka',75],['Celery',65],['CMocka',70]],
   'infra': [['AWS (S3/CF/R53)',85],['Docker',85],['Kubernetes',78],['Terraform',70],['Jenkins',72],['Harness',65],['Datadog',80],['Linux',82],['Git',90]],
-  'databases': [['PostgreSQL',82],['MySQL',85],['Titan II',60]],
+  'databases': [['PostgreSQL',82],['MySQL',85],['Redis',78],['Titan II',60]],
 };
 
 /* ============================================================
