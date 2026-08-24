@@ -25,7 +25,7 @@ const FS = {
   },
   '~/projects': {
     type: 'dir',
-    children: ['finsight.md', 'blockview.md'],
+    children: ['sonar.md', 'echo.md', 'consensus.md'],
   },
   '~/skills': {
     type: 'dir',
@@ -43,7 +43,7 @@ const FILES = {
     { text: '  hey, i\'m lathu.', cls: 'bold white' },
     { text: '' },
     { html: '  <img class="about-logo" src="img/waterloo.png" alt="University of Waterloo" /> <span style="color:var(--white)">cs student @ university of waterloo (sept 2024 – apr 2028)</span>' },
-    { text: '  currently interning at gemini in nyc, building real-time', cls: 'muted' },
+    { text: '  just wrapped an internship at gemini in nyc, building real-time', cls: 'muted' },
     { text: '  trading infrastructure — websockets, grpc microservices,', cls: 'muted' },
     { text: '  cdn migrations, the whole deal.', cls: 'muted' },
     { text: '' },
@@ -52,7 +52,8 @@ const FILES = {
     { text: '  optimizing packet processing at a telecom company, to shipping', cls: 'muted' },
     { text: '  production services at one of crypto\'s most trusted exchanges.', cls: 'muted' },
     { text: '' },
-    { text: '  outside of work — building games, exploring new toolchains,', cls: 'muted' },
+    { text: '  outside of work — shipping hackathon projects (3rd @ anthropic\'s', cls: 'muted' },
+    { text: '  claude hackathon, finalist @ ramp\'s builder cup), building games,', cls: 'muted' },
     { text: '  and studying market microstructure.', cls: 'muted' },
     { text: '' },
   ],
@@ -74,14 +75,14 @@ const FILES = {
 
   'gemini.md': () => [
     { html: buildExpCard(
-      'Software Engineering Intern', 'Jan 2026 — Present',
+      'Software Engineering Intern', 'Jan 2026 — May 2026',
       'Gemini · New York, NY',
       [
-        'Led CDN migration of NFT image + metadata serving from Cloudinary/Django to S3-backed CloudFront — preserved hardcoded smart contract URLs without on-chain changes, saving $119,826/yr.',
-        'Built a Go gRPC microservice for real-time and historical candlestick data using Kafka, S3, and SBE binary decoding.',
-        'Optimized WebSocket APIs delivering market data in <10ms and order acks in <50ms across 10K+ concurrent connections, all instrumented through Datadog.',
+        'Led migration of NFT image and metadata serving from Cloudinary/Django to S3-backed CloudFront CDN, preserving ~6,000 smart contract URLs via DNS and on-chain metadata updates — saving ~$119K in annual spend.',
+        'Rewrote a failing C++ candlestick service in Go, consuming live trades from Kafka and caching in Redis sorted sets with S3 historical fallback; added a batch gRPC endpoint consolidating three downstream API surfaces.',
+        'Engineered a full-stack USD-to-ETH cashout system for non-US users during the Nifty Gateway shutdown, with hold-based accounting, on-chain settlement, eligibility gating, and notifications — covering ~$1M in user funds.',
       ],
-      ['Go', 'gRPC', 'Kafka', 'AWS', 'CloudFront', 'S3', 'WebSockets', 'Datadog', 'Docker'],
+      ['Go', 'gRPC', 'Kafka', 'Redis', 'AWS', 'CloudFront', 'S3', 'WebSockets', 'Docker'],
       'gemini'
     )},
   ],
@@ -90,7 +91,7 @@ const FILES = {
       'Software Engineering Intern', 'May — Aug 2025',
       'Ciena Corporation · Burlington, MA',
       [
-        'Applied TDD by automating unit tests for 44 BNG functions, achieving 75% code coverage on critical packet processing software.',
+        'Applied TDD by automating unit tests for 44 BNG functions, achieving 85% code coverage on critical packet processing software.',
         'Tuned CMocka unit tests for ultra-fast networking code — tightened benchmarks and caught regressions early.',
         'Embedded LLMs into testing frameworks to accelerate root-cause analysis and streamline debugging workflows.',
       ],
@@ -125,18 +126,30 @@ const FILES = {
     )},
   ],
 
-  'finsight.md': () => [
+  'sonar.md': () => [
     { html: buildProjCard(
-      'FinSight',
-      'Full-stack behavioral investment notifier — analyzes trades against a 10-question risk profile and flags risky allocations, goal misalignments, and volatility outliers in real time. Interactive dashboard with questionnaire flows, trade uploads, alerts, and dynamic chart visualizations.',
-      ['Python', 'TypeScript', 'React', 'Flask', 'MySQL', 'Docker']
+      'Sonar',
+      'An engine catching cross-vendor cloud waste at the payment layer, where every vendor\'s invoice lands. Ships 4 detectors (z-score, OLS slope, tripwire, change-point) in DuckDB; OpenAI API drafts remediation. Selected as a finalist from 62 teams in the Save Money Save Time track at Ramp\'s Builder Cup Hackathon.',
+      ['Python', 'DuckDB', 'Streamlit', 'OpenAI API', 'pandas', 'NumPy', 'pytest'],
+      'Jul 2026',
+      'https://github.com/JKLTCreations/ramp-sonar'
     )},
   ],
-  'blockview.md': () => [
+  'echo.md': () => [
     { html: buildProjCard(
-      'BlockView Explorer',
-      'Ethereum + Binance blockchain explorer surfacing real-time balances and transaction histories via JSON API integrations. SQL-based pagination for efficient querying through large volumes of on-chain records.',
-      ['Python', 'SQL', 'Flask', 'HTML/CSS']
+      'Echo',
+      'An internal Go CLI that detects documentation drift across GitHub, Confluence, and Linear by comparing PR timelines against doc freshness, then generates draft PRs and comments to keep docs in sync. Distributed via Homebrew with a Slack bot for daily drift reports, cron-scheduled staleness checks, and Claude MCP integration for context-aware update generation. Uses git activity history to auto-map repositories to their associated docs and team channels, filtering by developer ownership for zero-config onboarding.',
+      ['Go', 'Claude MCP', 'GitHub', 'Confluence', 'Linear', 'Slack', 'Homebrew'],
+      'May 2026'
+    )},
+  ],
+  'consensus.md': () => [
+    { html: buildProjCard(
+      'Consensus',
+      'Orchestrates 5 AI agents through a 4-round debate protocol with mandatory concessions and consensus synthesis. Built programmatic claim extraction, discrepancy detection, and web-search-based fact verification pipelines. Placed 3rd at Anthropic\'s Claude Hackathon, earning $500 in API credits for transparent policy analysis.',
+      ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Anthropic Claude API', 'Node.js'],
+      'Mar 2026',
+      'https://github.com/JKLTCreations/consensus'
     )},
   ],
 };
@@ -163,9 +176,11 @@ function buildExpCard(role, date, company, details, tags, logoKey) {
 </div>`;
 }
 
-function buildProjCard(name, desc, tags) {
+function buildProjCard(name, desc, tags, meta, url) {
+  const link = url ? ` <a class="proj-link" href="${url}" target="_blank">repo →</a>` : '';
+  const metaText = meta ? ` <span class="proj-meta">· ${meta}</span>` : '';
   return `<div class="proj-card">
-  <div class="proj-name">${name}</div>
+  <div class="proj-name">${name}${link}${metaText}</div>
   <div class="proj-desc">${desc}</div>
   <div class="exp-tags">${tags.map(t => `<span class="exp-tag">${t}</span>`).join('')}</div>
 </div>`;
@@ -189,10 +204,10 @@ function buildSkillBars(skills) {
 }
 
 const SKILL_DATA = {
-  'languages': [['Python',90],['Go',82],['C/C++',80],['TypeScript',85],['JavaScript',80],['Rust',60],['Java',70],['SQL',78],['Racket',50]],
-  'frameworks': [['React',85],['Node.js',80],['Flask',90],['Django',75],['gRPC',78],['Kafka',75],['Celery',65],['CMocka',70]],
-  'infra': [['AWS (S3/CF/R53)',85],['Docker',85],['Kubernetes',78],['Terraform',70],['Jenkins',72],['Harness',65],['Datadog',80],['Linux',82],['Git',90]],
-  'databases': [['PostgreSQL',82],['MySQL',85],['Redis',78],['Titan II',60]],
+  'languages': [['Python',90],['Go',82],['C/C++',80],['Rust',65],['JavaScript',80],['TypeScript',85],['Java',70],['Scala',55],['SQL',78],['HTML/CSS',88],['Racket',50]],
+  'frameworks': [['React',85],['Node.js',80],['Flask',90],['Django',75],['Celery',65],['CMocka',70],['Datadog',80],['Linear',75]],
+  'infra': [['AWS',85],['Docker',85],['Kubernetes',78],['Terraform',70],['Jenkins',72],['Harness',65],['Kafka',75],['Redis',78],['gRPC',78],['WebSocket',80],['REST',88]],
+  'databases': [['MySQL',85],['PostgreSQL',82],['Titan II',60]],
 };
 
 /* ============================================================
@@ -501,8 +516,9 @@ function cmdTree() {
     { text: '  │   ├── marsa.md', cls: 'white' },
     { text: '  │   └── brainracers.md', cls: 'white' },
     { text: '  ├── projects/', cls: 'bold cyan' },
-    { text: '  │   ├── finsight.md', cls: 'white' },
-    { text: '  │   └── blockview.md', cls: 'white' },
+    { text: '  │   ├── sonar.md', cls: 'white' },
+    { text: '  │   ├── echo.md', cls: 'white' },
+    { text: '  │   └── consensus.md', cls: 'white' },
     { text: '  ├── games/', cls: 'bold cyan' },
     { text: '  │   ├── maze-memory', cls: 'green' },
     { text: '  │   └── thru-the-gap', cls: 'green' },
@@ -512,7 +528,7 @@ function cmdTree() {
     { text: '      ├── infra/', cls: 'cyan' },
     { text: '      └── databases/', cls: 'cyan' },
     { text: '' },
-    { text: '  5 directories, 11 files', cls: 'muted' },
+    { text: '  5 directories, 12 files', cls: 'muted' },
     { text: '' },
   ]);
 }
@@ -544,8 +560,9 @@ function cmdExperience() {
    ============================================================ */
 function cmdProjects() {
   print([{ text: '' }]);
-  print(FILES['finsight.md']());
-  print(FILES['blockview.md']());
+  print(FILES['sonar.md']());
+  print(FILES['echo.md']());
+  print(FILES['consensus.md']());
   print([{ text: '' }]);
 }
 

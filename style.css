@@ -224,6 +224,9 @@ body {
 }
 .proj-name { color: var(--orange); font-weight: 700; }
 .proj-desc { color: var(--muted); font-size: .84rem; margin: 6px 0; }
+.proj-link { color: var(--accent); font-weight: 400; font-size: .78rem; text-decoration: none; margin-left: 8px; }
+.proj-link:hover { text-decoration: underline; }
+.proj-meta { color: var(--muted); font-weight: 400; font-size: .78rem; }
 
 /* skill bars */
 .skill-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
